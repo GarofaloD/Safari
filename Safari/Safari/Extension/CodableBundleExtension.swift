@@ -10,7 +10,8 @@ import Foundation
 extension Bundle {
     
     //Blueprint of decoder algorithm
-    func decode(_ file: String) -> [CoverImage]{
+    //Now using generics
+    func decode<T: Codable>(_ file: String) -> T {
         
         //1.Locate the json file. In this case, covers.json
         guard let url = self.url(forResource: file, withExtension: nil) else {fatalError("Failed to locate \(file) in bundle")}
@@ -22,7 +23,7 @@ extension Bundle {
         let decoder = JSONDecoder()
         
         //4.Create a property for the decoded data.
-        guard let loaded = try? decoder.decode([CoverImage].self, from: data) else {fatalError("Failed to decode \(file) from bundle")}
+        guard let loaded = try? decoder.decode(T.self, from: data) else {fatalError("Failed to decode \(file) from bundle")}
         
         //5.Return the ready to use data
         return loaded
