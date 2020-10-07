@@ -22,7 +22,9 @@ struct ContentView: View {
                     .listRowInsets(EdgeInsets(top: 00, leading: 0, bottom: 0, trailing: 0)) //Modifier for the specific row
                 //List with all the animals
                 ForEach(animals) { animal in
-                    AnimalListItemView(animal: animal)
+                    NavigationLink(destination: AnimalDetailView(animal: animal)){
+                        AnimalListItemView(animal: animal)
+                    }//:NAVLINK
                 }
             }//:LIST
             .navigationBarTitle("Safari", displayMode: .large)
