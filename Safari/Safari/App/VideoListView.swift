@@ -14,17 +14,15 @@ struct VideoListView: View {
     //Haptics management
     let hapticImact = UIImpactFeedbackGenerator(style: .medium)
     
-    
-    
-    
-    
     //MARK:- BODY
     var body: some View {
         NavigationView {
             List {
                 ForEach(videos) { item in
-                    VideoListItemView(video: item)
-                        .padding(.vertical, 8)
+                    NavigationLink(destination: VideoPlayerView(videoSelected: item.id, videoTitle: item.name)){
+                        VideoListItemView(video: item)
+                            .padding(.vertical, 8)
+                    }
                 }
             }//:LIST
             .listStyle(InsetGroupedListStyle())
