@@ -42,17 +42,62 @@ struct MapView: View {
             //MapMarker(coordinate: item.location, tint: .accentColor)
             
             //Option C: Custom
+//            MapAnnotation(coordinate: item.location) {
+//                Image("logo")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 32, height: 32, alignment: .center)
+//            }//:Anotation
+            
+            //Option D: Custom anotation with annotation
             MapAnnotation(coordinate: item.location) {
-                Image("logo")
+                MapAnnotationView(location: item)
+            }
+        })//:MAP
+        .overlay(
+            HStack(alignment:.center, spacing:12) {
+                
+                //Compass image on the left
+                Image("compass")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 32, height: 32, alignment: .center)
-            }//:Anotation
-            
-        })
-        
-        
-        
+                    .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                //Vertical arrangement of lat/long on the right
+                VStack(alignment: .leading, spacing: 3){
+                    HStack(){
+                        Text("Latitude")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.accentColor)
+                        Spacer()
+                        Text("\(region.center.latitude)")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                    }
+                    Divider()
+                    HStack(){
+                        Text("Longitude")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.accentColor)
+                        Spacer()
+                        Text("\(region.center.longitude)")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                    }
+                }//:Lat/long on the right
+                
+            }//:HSTACK
+            .padding(.vertical, 12)
+            .padding(.horizontal, 15)
+            .background(
+                Color.black
+                    .cornerRadius(8)
+                    .opacity(0.6)
+            )
+            .padding(), alignment: .top
+        )//:OVERLAY
     }//:BODY
     
     
