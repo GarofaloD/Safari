@@ -38,6 +38,7 @@
 		8C84D318253E3F000066E652 /* VideoPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C84D317253E3F000066E652 /* VideoPlayerHelper.swift */; };
 		8C850FA5252D1B8400D9C74C /* AnimalListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C850FA4252D1B8400D9C74C /* AnimalListItemView.swift */; };
 		8C850FA8252D1EC100D9C74C /* AnimalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C850FA7252D1EC100D9C74C /* AnimalModel.swift */; };
+		8CBE99D2254C3DFE00B49503 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE99D1254C3DFE00B49503 /* MotionAnimationView.swift */; };
 		8CCC99352537A48B00754095 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC99342537A48B00754095 /* VideoModel.swift */; };
 		8CCC99382537A58A00754095 /* VideoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC99372537A58A00754095 /* VideoListItemView.swift */; };
 		8CEDD63E252E6BAD00306B6F /* AnimalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD63D252E6BAD00306B6F /* AnimalDetailView.swift */; };
@@ -82,6 +83,7 @@
 		8C84D317253E3F000066E652 /* VideoPlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerHelper.swift; sourceTree = "<group>"; };
 		8C850FA4252D1B8400D9C74C /* AnimalListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListItemView.swift; sourceTree = "<group>"; };
 		8C850FA7252D1EC100D9C74C /* AnimalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModel.swift; sourceTree = "<group>"; };
+		8CBE99D1254C3DFE00B49503 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		8CCC99342537A48B00754095 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8CCC99372537A58A00754095 /* VideoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItemView.swift; sourceTree = "<group>"; };
 		8CEDD63D252E6BAD00306B6F /* AnimalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				8CCC99372537A58A00754095 /* VideoListItemView.swift */,
 				8C84D313253E3CA10066E652 /* VideoPlayerView.swift */,
 				8C1A1E632546F311002EC378 /* MapAnnotationView.swift */,
+				8CBE99D1254C3DFE00B49503 /* MotionAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8CEDD644252E767600306B6F /* InsetGalleryView.swift in Sources */,
 				8CCC99382537A58A00754095 /* VideoListItemView.swift in Sources */,
 				8C1701402525F6AC003B05AB /* CodableBundleExtension.swift in Sources */,
+				8CBE99D2254C3DFE00B49503 /* MotionAnimationView.swift in Sources */,
 				8CEDD641252E726800306B6F /* HeadingView.swift in Sources */,
 				8C84D314253E3CA10066E652 /* VideoPlayerView.swift in Sources */,
 			);
