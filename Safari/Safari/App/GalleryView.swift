@@ -15,6 +15,12 @@ struct GalleryView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(MotionAnimationView())
     }
+    
+    
+    
+    
+    
+
 }
 
 struct GalleryView_Previews: PreviewProvider {
