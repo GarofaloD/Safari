@@ -24,13 +24,15 @@ struct GalleryView: View {
     //let gridLayout : [GridItem] = Array(repeating: GridItem(.flexible()), count: 3)
     
     //DYNAMIC GRID LAYOUT
-    @State private var gridLayout : [GridItem] = [GridItem(.flexible())]
-    @State private var gridColumn : Double = 3.0
+    @State private var gridLayout : [GridItem] = [GridItem(.flexible())] //grid init
+    @State private var gridColumn : Double = 3.0 //value to be used for the amount of columns
     
     let animals: [Animal] = Bundle.main.decode("animals.json")
+    let haptics = UIImpactFeedbackGenerator(style: .medium)
     
     
     //MARK: Functions
+    //This will control the size of the grid based in the columns, updating the column each time
     func gridSwitch(){
         gridLayout = Array(repeating: .init(.flexible()), count: Int(gridColumn))
     }
@@ -51,6 +53,13 @@ struct GalleryView: View {
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 8))
                 
+                //MARK: Slider
+                Slider(value: $gridColumn, in: 2...4, step: 1)
+                    .padding(.horizontal)
+                    //Change amount of columns when changing the value of the slider
+                    .onChange(of: gridColumn, perform: { value in
+                        gridSwitch()
+                    })
                 
                 
                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
@@ -64,9 +73,16 @@ struct GalleryView: View {
                             //change the image to the one selected by tapping on it
                             .onTapGesture {
                                 selectedAnimal = item.image
+                                haptics.impactOccurred()
                             }
                     }//:LOOP
                 }//:GRID
+                .animation(.easeIn)
+                .onAppear(perform: {
+                    gridSwitch()
+                })
+                
+                
             }//:VStack
             .padding(.horizontal, 10)
             .padding(.vertical, 50)
